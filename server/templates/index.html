@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <div class="container-fluid alert alert-dark border-dark">
+        <div class="row">
+            <label for="" class="display-4 fw-normal">Hotel Booking Cancellation Prediction</label>
+        </div>
+        <div class="row m-2">
+            <form class="row g-3 alert alert-light border-light" method="post">
+                <label for="" class="alert alert-success border-success">Booking has no chance of Cancellation.</label>
+                <label for="" class="alert alert-danger border-danger">Booking has chance of Cancellation.</label>
+                <div class="col-md-3">
+                    <label for="" class="form-label">Hotel Type</label>
+                    <select name="hotel_type" class="form-select">
+                        <option value="resort" selected>Resort</option>
+                        <option value="city">City</option>
+                    </select>
+                </div>
+                <div class="col-md-3 col-6">
+                    <label for="" class="form-label">Lead Time</label>
+                    <input type="number" class="form-control" step="any" name="lead_time" value="1" min="1" max="30">
+                </div>
+                <div class="col-md-3 col-6">
+                    <label for="" class="form-label">Adults</label>
+                    <input type="number" class="form-control" name="adult" value="1" min="1" max="100">
+                </div>
+                <div class="col-md-3 col-6">
+                    <label for="" class="form-label">Children</label>
+                    <input type="number" class="form-control" name="children" value="0" min="0" max="100">
+                </div>
+                <div class="col-md-3 col-6">
+                    <label for="" class="form-label">Babies</label>
+                    <input type="number" class="form-control" name="baby" value="0" min="0" max="100">
+                </div>
+                <div class="col-md-3 col-12">
+                    <label for="" class="form-label">Agent Code</label>
+                    <input type="number" class="form-control" name="agent" value="1" min="1" max="999">
+                </div>
+                <div class="col-md-3 col-12">
+                    <label for="" class="form-label">Company Code</label>
+                    <input type="number" class="form-control" name="com_code" value="1" min="1" max="999">
+                </div>
+                <div class="col-md-3 col-6">
+                    <label for="" class="form-label">Repeated Guest</label>
+                    <select name="repeated_guest" class="form-select">
+                        <option value="yes">Yes</option>
+                        <option value="no" selected>No</option>
+                    </select>
+                </div>
+                <div class="col-md-3 col-6">
+                    <label for="" class="form-label">Cancelled Before</label>
+                    <select name="cancellation" class="form-select">
+                        <option value="yes">Yes</option>
+                        <option value="no" selected>No</option>
+                    </select>
+                </div>
+                <div class="col-md-3 col-6">
+                    <label for="" class="form-label">Previous Booking Not Cancelled</label>
+                    <select name="pbnc" class="form-select">
+                        <option value="yes">Yes</option>
+                        <option value="no" selected>No</option>
+                    </select>
+                </div>
+                <div class="col-md-3 col-6">
+                    <label for="" class="form-label">Car Parking</label>
+                    <select name="parking" class="form-select">
+                        <option value="yes">Yes</option>
+                        <option value="no" selected>No</option>
+                    </select>
+                </div>
+                <div class="col-md-3 col-6">
+                    <label for="" class="form-label">Total of Special Request</label>
+                    <input type="number" class="form-control" value="0" name="tsr" min="0" max="10">
+                </div>
+                <div class="col-md-3 col-6">
+                    <label for="" class="form-label">ADR</label>
+                    <input type="number" step="any" class="form-control" name="adr" min="0" max="99">
+                </div>
+                <div class="col-md-4">
+                    <label for="" class="form-label">Arrival Month</label>
+                    <select name="month" class="form-select">
+                        <option value="jan">Janurary</option>
+                        <option value="feb">February</option>
+                        <option value="mar">March</option>
+                        <option value="apr">April</option>
+                        <option value="may">May</option>
+                        <option value="jun">June</option>
+                        <option value="jul">July</option>
+                        <option value="aug">August</option>
+                        <option value="sep">September</option>
+                        <option value="oct">October</option>
+                        <option value="nov">November</option>
+                        <option value="dec">December</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label for="" class="form-label">Market Segment</label>
+                    <select name="ms" class="form-select">
+                        <option value="dir">Direct</option>
+                        <option value="cor">Corporate</option>
+                        <option value="ol">Online TA</option>
+                        <option value="off">Offline TA/TO</option>
+                        <option value="com">Complementary</option>
+                        <option value="grp">Groups</option>
+                        <option value="avi">Aviation</option>
+                        <option value="oth">Other</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label for="" class="form-label">Distribution Channel</label>
+                    <select name="dc" class="form-select">
+                        <option value="dir">Direct</option>
+                        <option value="cor">Corporate</option>
+                        <option value="tato">TA/TO</option>
+                        <option value="undef">Undefined</option>
+                        <option value="gds">GDS</option>
+                        <option value="oth">Other</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label for="" class="form-label">Deposit Type</label>
+                    <select name="dt" class="form-select">
+                        <option value="ndep">No Deposit</option>
+                        <option value="ref">Refundable</option>
+                        <option value="nref">Non Refund</option>
+                        <option value="oth">Other</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label for="" class="form-label">Customer Type</label>
+                    <select name="ct" class="form-select">
+                        <option value="trn">Transient</option>
+                        <option value="con">Contract</option>
+                        <option value="trnp">Transient-Party</option>
+                        <option value="grp">Group</option>
+                        <option value="oth">Other</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label for="" class="form-label">Room Change</label>
+                    <select name="room_change" class="form-select">
+                        <option value="yes">Yes</option>
+                        <option value="no" selected>No</option>
+                    </select>
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-dark">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>
